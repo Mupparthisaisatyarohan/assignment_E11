@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Task3</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container{
+            border:1px solid black;
+            border-radius: 9px;
+            padding:20px;
+        }
+        .row{
+            margin-bottom: 10px;
+        }
+        .row-label{
+            display:inline-block;
+            width:100px;
+        }
+        .row-input{
+            width: 150px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <label for="firstNum" class="row-label">1st Number</label>
+            <input type="number" placeholder="Enter first number" id="firstNum" class="row-input"/>
+        </div>
+        <div class="row">
+            <label for="secondNum" class="row-label">2nd Number</label>
+            <input type="number" placeholder="Enter second number" id="secondNum" class="row-input"/>
+        </div>
+        <div>
+            <button id="multiply">Multiply</button>
+            <button id="divide">Divide</button>
+        </div>
+    </div>
+    <p>The result is : <span id="span"></span></p>
+  </body>
+  <script>
+    let firstNumEl=document.getElementById("firstNum");
+    let secondNumEl=document.getElementById("secondNum");
+    let multiplyEl=document.getElementById("multiply");
+    let divideEl=document.getElementById("divide");
+    let spanEl=document.getElementById("span");
+
+    multiplyEl.onclick=function(){
+        let first=parseInt(firstNumEl.value);
+        let second=parseInt(secondNumEl.value);
+        spanEl.textContent=first*second;
+    }
+
+    divideEl.onclick=function(){
+        let first=parseInt(firstNumEl.value);
+        let second=parseInt(secondNumEl.value);
+        spanEl.textContent=Math.round(first/second);
+    }
+  </script>
+</html>

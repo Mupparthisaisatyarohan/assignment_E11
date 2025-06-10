@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task2</title>
+  </head>
+  <body>
+    <input type="text" id="input"/>
+    <button id="button">Sort Value</button>
+    <p>The Sorted String is : <span id="span"></span></p>
+  </body>
+<script>
+    let inputEl=document.getElementById("input");
+    let buttonEl=document.getElementById("button");
+    let spanEl=document.getElementById("span");
+
+    buttonEl.onclick=function(){
+        let textValue=inputEl.value;
+        textValue=textValue.replace(" ","");
+        let arr=textValue.split("");
+        console.log(arr);
+        let sortedArr=arr.sort();
+        console.log(sortedArr);
+        let joinStr=sortedArr.join("");
+        console.log(joinStr);
+        spanEl.textContent=joinStr;
+    }
+</script>
+</html>

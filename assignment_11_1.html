@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Task1</title>
+  </head>
+  <body>
+    <input type="number" id="input"/>
+    <button id="button">Reverse Value</button>
+    <p>The reverse Value is : <span id="span"></span></p>
+  </body>
+<script>
+    let inputEl=document.getElementById("input");
+let buttonEl=document.getElementById("button");
+let spanEl=document.getElementById("span");
+
+buttonEl.onclick=function(){
+    let number=parseInt(inputEl.value);
+    let reverseValue=0;
+    let rem=0;
+    while(number!==0){
+        rem=number%10;
+        number=Math.floor(number/10);
+        reverseValue=reverseValue*10+rem;
+    }
+    //console.log(reverseValue);
+    spanEl.textContent=reverseValue;
+}
+</script>
+</html>
